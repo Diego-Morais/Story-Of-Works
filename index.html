@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   
+ <head>
+     
+     <style>
+       
+       body{
+    background-color: turquoise;
+    
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+.container{
+    border: solid 3px black;
+    background: oldlace;
+    width: 800px;
+    height: 600px;
+    margin: 50px auto;
+    position: relative;
+   //overflow: hidden;
+    }
+    
+    .carregamento img{
+      display: none;
+      width: 150px;
+      margin-top: -120px;
+      margin-left: 340px;
+  
+      
+    }
+    
+    .titulo img{
+       position: absolute;
+       width: 600px;
+       margin-left: 100px;
+    }
+    
+    .som_on img{
+      position: absolute;
+      width: 50px;
+      margin-left: 720px;
+      display: none;
+      cursor: pointer;
+    }
+
+    .som_off img{
+      
+       position: absolute;
+       width: 50px;
+       margin-left: 720px;
+       cursor:pointer;
+       
+    }
+
+.botoes{
+  position: absolute;
+  text-align: center;
+  font-size: 26px;
+  margin-top: 500px;
+  
+
+  
+}
+
+.jg{
+  margin-top: -100px;
+  margin-left: 250px;
+  color: white;
+  border: solid 2px black;
+  border-radius: 15px 15px;
+  background: black;
+  display: inline-block;
+  width: 300px;
+}
+
+.inst{
+  margin-top: 10px;
+  color: white;
+  border: solid 2px black;
+  border-radius: 15px 15px;
+  background: black;
+  width: 300px;
+  margin-left: 250px;
+}
+
+.text-inst{
+     margin: 0;
+     width: 100%;
+     height: 100%;
+     color: white;
+     border: solid 3px rebeccapurple;
+     text-align: center;
+     background-color: #000000ab;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+     display: none;
+     animation: abrir_modal;
+     animation-duration: 800ms
+}
+
+.title{
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+.text-inst h2{
+  width: 600px;
+  height: 400px;
+  margin: 100px;
+  border: solid 3px;
+  background: oldlace;
+  color: black;
+  margin-top: 100px;
+}
+
+.close-inst{
+  margin-top: 30px;
+  color: white;
+  width: 200px;
+  display: inline-block; 
+  background: black;
+  border: solid 3px black;
+  border-radius: 15px 15px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.jogar{
+  display: none;
+  width: 800px;
+  height: 600px;
+
+}
+
+
+
+#personagem{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 140px;
+    left: 320px;
+    overflow: hidden;
+    }
+    
+ 
+ #personagem img{
+      width: 300px;
+      position: absolute;
+    }
+    
+    .movimento{
+      animation: movimento 500ms steps(3) infinite;
+    }
+    
+    .parabaixo{
+      top: 5px;
+    }
+    
+    .paracima{
+      top: -380px;
+    }
+
+    .paraesquerda{
+     top: -120px;
+    }
+    
+    .paradireita{
+      top: -250px;
+    }
+    
+    @keyframes movimento{
+      
+      from{
+        transform: translate3d(0,0,0);
+      }
+      
+      to{
+        transform: translate3d(-90%,0,0);
+      }
+    }
+
+ 
+    .portal1{
+      
+      position: absolute;
+      left: 700px;
+    }
+    
+    
+     .portal2{
+       display: none;
+      position: absolute;
+      left: 700px;
+      top: 500px;
+      }
+
+  .portal3{
+    
+  display: none;
+  position: absolute;
+  top: 500px;
+  
+  }
+
+ .portal4{
+   display: none;
+  position: absolute;
+  top: 140px;
+  left: 320px;
+
+   
+ }
+
+.chave1{
+    position: absolute;
+    top: 50px;
+}
+
+.chave2{
+    display: none;
+    position: absolute;
+    top: 20px;
+  
+}
+
+.chave3{
+    display: none;
+    position: absolute;
+    top: 80px;
+  
+}
+
+
+
+.chaves{
+  position: absolute;
+  color: red;
+  font-size: 30px;
+  border: solid 1px white;
+  background: white;
+}
+    
+  .modal1{
+   
+   font-size: 19px;
+   margin: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    border: solid 3px rebeccapurple;
+    background-color: #000000ab;
+    position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+     display: none;
+     animation: abrir_modal;
+     animation-duration: 800ms;
+    
+}
+
+
+
+
+
+.modal2{
+     margin: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    border: solid 3px rebeccapurple;
+    background-color: #000000ab;
+    position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+     display: none;
+     animation: abrir_modal;
+     animation-duration: 800ms;
+    
+}
+
+
+.modal3{
+  
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    color: white;
+    border: solid 3px rebeccapurple;
+    background-color: #000000ab;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    animation: abrir_modal;
+    animation-duration: 800ms;
+    
+}
+
+
+
+@keyframes abrir_modal{
+
+    from{opacity: 1;}
+    from{opacity: 0;}
+}
+
+
+.confirmar{
+    margin-top: 10px;
+    width: 300px;
+    text-align: center;
+    margin-left: 250px;
+    color: red;
+    font-size: 30px;
+    border: solid 5px white;
+    border-radius: 15px 15px;
+    background: white;
+    cursor: pointer;
+    
+    
+}
+
+.confirmar2{
+  
+    margin-top: 20px;
+    width: 300px;
+    text-align: center;
+    margin-left: 250px;
+    color: red;
+    font-size: 30px;
+    border: solid 5px white;
+    border-radius: 15px 15px;
+    background: white;
+    cursor: pointer;
+
+  
+}
+
+.confirmar3{
+  
+    margin-top: 20px;
+    width: 300px;
+    text-align: center;
+    margin-left: 250px;
+    color: red;
+    font-size: 30px;
+    border: solid 5px white;
+    border-radius: 15px 15px;
+    background: white;
+    cursor: pointer;
+
+  
+  
+  
+}
+
+
+.continuar{
+  
+     margin-top: 10px;
+    width: 300px;
+    text-align: center;
+    margin-left: 250px;
+    color: red;
+    font-size: 30px;
+    border: solid 5px white;
+    border-radius: 15px 15px;
+    background: white;
+    cursor: pointer;
+    display: none;
+
+  
+  
+}
+
+.continuar2{
+  
+    margin-top: 20px;
+    width: 300px;
+    text-align: center;
+    margin-left: 250px;
+    color: red;
+    font-size: 30px;
+    border: solid 5px white;
+    border-radius: 15px 15px;
+    background: white;
+    cursor: pointer;
+    display: none;
+
+  
+  
+}
+
+.continuar2{
+  
+    margin-top: 20px;
+    width: 300px;
+    text-align: center;
+    margin-left: 250px;
+    color: red;
+    font-size: 30px;
+    border: solid 5px white;
+    border-radius: 15px 15px;
+    background: white;
+    cursor: pointer;
+    display: none;
+
+  
+  
+}
+
+.continuar3{
+  
+  margin-top: 20px;
+    width: 300px;
+    text-align: center;
+    margin-left: 250px;
+    color: red;
+    font-size: 30px;
+    border: solid 5px white;
+    border-radius: 15px 15px;
+    background: white;
+    cursor: pointer;
+    display: none;
+
+  
+
+}
+
+.container2{
+  border: solid 3px;
+  margin: 20px;
+  background: oldlace;
+  color: black;
+}
+
+
+.container3{
+  border: solid 3px;
+  margin: 20px;
+  background: oldlace;
+  color: black;
+}
+
+
+
+.container4{
+  border: solid 3px;
+  margin: 20px;
+  background: oldlace;
+  color: black;
+}
+
+.adc_chave2{
+  display: none;
+  position: absolute;
+  top: 400px;
+  left: 350px;
+}
+
+.adc_chave2 img{
+    width: 100px;
+}
+
+
+
+
+.adc_chave{
+  display: none;
+  position: absolute;
+  top: 460px;
+  left: 350px;
+}
+
+.adc_chave img{
+    width: 100px;
+}
+
+     </style>
+     
+     
+    </head>   
+    
+    
+    
+    
+   <body>
+       
+       
+    <div class="container">
+      
+  
+<div class="inicio">
+  
+<div class="titulo"><img src="Imagens/Titulo.png"></div>
+
+<div class="som_off" onclick="som_off()"><img src="Imagens/som_off.png"></div>
+<div class="som_ligado"><audio src="Musica/Musica.mp3" loop="loop"></audio></div>
+      
+ <div class="som_on" onclick="som_on()"><img src="Imagens/som_on.png"></div>
+      
+     
+      
+      <div class="botoes">
+      <div class="carregamento"><img src="Imagens/Carregamento.gif"></div>
+        <div class="jg" onclick="jogar()"><h2>jogar</h2></div>
+  
+        <div class="inst" onclick="instrucao()"><h2>instrução</h2></div>
+        
+      </div>
+      </div>
+      
+      
+     <div class="text-inst">
+       <h2>
+      <div class="title">Istrução</div>
+      
+         Você terá que andar pelo mapa em busca de chaves, mas pra conseguir
+         as chaves voçê terá que entrar no portal e responder as perguntas, após isso voçé consiguirá uma chave para abrir outro  portal, e assim até desbloqueiar 3 chaves. as perguntas serão sobre pinturas famosas,  com objetivo do jogador adiquirir conhecimento e curiosidas.
+      
+      <div class="close-inst" onclick="close_inst()">Ok</div>
+         
+       </h2>
+       
+       
+     </div>
+      
+      <div class="jogar">
+      
+      
+      <div class="chaves"> Chaves 1/3 </div>
+      
+    <div class="chave1"><img src="Imagens/chave.png" width="100px"></div>
+    <div class="chave2"><img src="Imagens/chave.png" width="100px"></div> 
+    <div class="chave3"><img src="Imagens/chave.png" width="100px"></div>
+    
+    
+    <div class="portal1"><img src="Imagens/portal.gif" width="100px"></div>
+  
+    <div class="portal2"><img src="Imagens/portal.gif" width="100px"></div>
+  
+    <div class="portal3"><img src="Imagens/portal.gif" width="100px"></div>
+  
+    <div class="portal4"><img src="Imagens/portal.gif" width="100px"></div>
+  
+    
+      
+      
+  
+     <img src="Imagens/Fundo.jpeg" width="100%" height="100%">
+        
+     <div id="personagem">
+          
+     <img src="Imagens/Personagem.png" class="parabaixo">
+
+            
+          
+        </div> 
+       
+  
+    </div>
+    
+
+    <div class="modal1">
+   
+   
+  <div class="container2">   
+<form>  
+<img src="Imagens/imagem1.jpg" height="120px" style="margin-left: 350px;">
+
+
+ <h2>qual a relação da mona lisa com o renascentismo?</h2>     
+        
+ <h3 class="v"><input class="q1" type="radio" name="webmaster">uso da tinta a óleo,que era bastante comum nas pinturas da época.</h3>
+ 
+<h3 class="f"><input class="q2" type="radio"  name="webmaster" class="F">a moldura de madeira de carvalho,que era utilizado em obras de luxo.</h3>
+   
+  <h3 class="f2"><input class="q3" type="radio"  name="webmaster">a ausencia da cor vermelha.</h3>
+
+ <h3 class="f3"><input class="q4" type="radio"  name="webmaster">o fato de ser uma foto retrato,poisas pinturas só podiam ser em retratos.</h3>
+        
+</form>
+        
+  
+  
+  <form> 
+  
+  
+  
+ <h2>quando essa obra foi pintada?</h2>
+   
+   <h3 class="f4"><input class="q5" type="radio"  name="webmaster">1347</h3>
+   <h3 class="f5"><input class="q6" type="radio"  name="webmaster">1464</h3>
+  <h3 class="v2"><input  class="q7"  type="radio"  name="webmaster">1511</h3>
+  <h3 class="f6"><input class="q8" type="radio"  name="webmaster">1578</h3>
+    
+<div class="confirmar" onclick="confirmar()">confirmar</div>
+
+<div class="adc_chave"><img src="Imagens/chave.png"></div>
+<div class="continuar"  onclick="continuar()">continuar</div>
+</form>
+          
+  
+    </div> 
+    
+    </div>
+    
+      
+     
+    <div class="modal2">
+      
+      <div class="container3">
+        <form>
+  <img src="Imagens/imagem2.jpeg" width="300px" style="margin-left: 250px;">
+
+  
+ <h2>Qual local onde atualmente encontra essa obra? </h2>     
+        
+ <h3 class="v3"><input class="q9" type="radio" name="webmaster">museu louvre</h3>
+ 
+<h3 class="f7"><input class="q10" type="radio"  name="webmaster">museu Vaticanos</h3>
+   
+  <h3 class="f8"><input class="q11" type="radio"  name="webmaster">museu Tate Modern</h3>
+  
+</form>
+        
+        
+  <form>     
+ <h2>Qual o nome original da mulher que foi a musa ispiradora dessa obra?</h2>
+   
+   <h3 class="f9"><input class="q12" type="radio"  name="webmaster">Maria</h3>
+   <h3 class="f10"><input class="q13" type="radio"  name="webmaster">Elisabete</h3>
+  <h3 class="v4"><input  class="q14"  type="radio"  name="webmaster">Lisa di Antonio Maria Gherardini</h3>
+  <h3 class="f11"><input class="q15" type="radio"  name="webmaster">cherardini</h3>
+    
+    
+  <div class="confirmar2" onclick="confirmar2()">Confirmar</div>
+  <div class="adc_chave2"><img src="Imagens/chave.png"></div>
+  <dIV Class="continuar2" onclick="continuar2()">continuar</dIV>
+
+
+  </form>
+    </div>
+
+
+</div>
+
+
+ <div class="modal3">
+    <div class="container4">
+  <img src="Imagens/imagem3.jpeg" width="300px" style="margin-left: 250px;"> 
+      
+<form>      
+ <h2>em qual data essa  pintura foi criada?</h2>     
+        
+ <h3 class="f12"><input class="q16" type="radio" name="webmaster">1678/1679</h3>
+ 
+<h3 class="f13"><input class="q17" type="radio"  name="webmaster">1645/1646</h3>
+   
+  <h3 class="v5"><input class="q18" type="radio"  name="webmaster">1509/1510</h3>
+  
+</form>       
+
+  <form> 
+     
+ <h2>Qual o nome da academia que essa obra representa?</h2>
+   
+   <h3 class="f14"><input class="q19" type="radio"  name="webmaster">academia de laart</h3>
+   <h3 class="v6"><input class="q20" type="radio"  name="webmaster">academia de atenas</h3>
+  <h3 class="f15"><input  class="q21"  type="radio"  name="webmaster">academia imperial</h3>
+  
+
+     
+</form>
+            
+        
+  <div class="confirmar3" onclick="confirmar3()">Confirmar</div>
+  <div class="continuar3" onclick="continuar3()">continuar</div>
+  
+    </div>
+
+ </div>
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+    <script>
+    
+let personagem = document.querySelector("#personagem");
+let personagemImg = document.querySelector("#personagem img");
+let portal1 = document.querySelector(".portal1");
+let portal2 = document.querySelector(".portal2");
+let portal3 = document.querySelector(".portal3");
+let chave1 = document.querySelector(".chave1");
+let chave2 = document.querySelector(".chave2");
+let chave3 = document.querySelector(".chave3");
+
+
+
+let chaves = document.querySelector(".chaves");
+let porta1 = "on";
+let porta2 = "off";
+let porta3 = "off";
+let porta4 = "off";
+
+let personagemX = 320;
+let personagemY = 140;
+let tamanho_Personagem = 100;
+let altura_Container = 600;
+let largura_Container = 800;
+let velocidade =  10;
+
+
+function jogar(){
+
+document.querySelector(".carregamento img").style.display = "block";
+document.querySelector(".jg").style.display = "none";
+document.querySelector(".inst").style.display = "none";
+
+  
+  var timer = setTimeout(function() { 
+
+let Game = document.querySelector(".jogar");
+let inicio = document.querySelector(".inicio");
+inicio.style.display = "none";
+Game.style.display = "block";
+  
+  }, 3000); //3 segundos
+  
+  
+  
+  
+}
+
+function instrucao(){
+  
+  let inst = document.querySelector(".text-inst");
+  
+  inst.style.display = "block";
+  
+}
+
+function close_inst(){
+      
+  let inst = document.querySelector(".text-inst");
+  
+  inst.style.display = "none";
+}
+
+function som_off(){
+  
+  let som_ligado = document.querySelector(".som_on img");
+  let som_desligado = document.querySelector(".som_off img");
+  let musica = document.querySelector(".som_ligado audio");
+  
+  musica.play();
+  
+  som_desligado.style.display = "none";
+  som_ligado.style.display = "block";
+  
+}
+
+
+
+
+
+function som_on(){
+  
+  let som_ligado = document.querySelector(".som_on img");
+  let som_desligado = document.querySelector(".som_off img");
+  let musica = document.querySelector(".som_ligado audio");
+  
+  musica.load();
+  
+  som_desligado.style.display = "block";
+  som_ligado.style.display = "none";
+  
+  
+  
+}
+
+
+
+document.addEventListener("keydown",movimento);
+
+document.addEventListener("keyup",parar);
+
+function parar(evento){
+evento.preventDefault();
+  
+  let tecla = evento.key;
+  
+  switch(tecla){
+    
+    case  'ArrowUp':
+    case  'ArrowDown':
+    case  'ArrowLeft':
+    case  'ArrowRight':
+      
+    personagemImg.classList.remove("movimento");
+     
+    break;
+    
+    
+  }
+}
+
+
+function movimento(evento){
+evento.preventDefault();
+
+
+
+ 
+  
+let tecla = evento.key;
+
+  switch(tecla){
+  
+  
+    case 'ArrowUp': 
+      personagemImg.classList.add("movimento","paracima");
+      personagemImg.classList.remove("parabaixo");
+      personagemImg.classList.remove("paradireita");
+      personagemImg.classList.remove("paraesquerda");
+      
+      personagemY -= velocidade;
+    
+    if(personagemY <= 0){
+      personagemY = 0;
+    }
+    
+    personagem.style.top = personagemY+"px";  
+       
+     break;  
+        
+    case 'ArrowDown': 
+      personagemImg.classList.add("movimento","parabaixo");
+      personagemImg.classList.remove("paracima");
+      personagemImg.classList.remove("paradireita");
+      personagemImg.classList.remove("paraesquerda");
+      
+      personagemY += velocidade;
+      
+      if(personagemY >= altura_Container - tamanho_Personagem){
+        personagemY = altura_Container - tamanho_Personagem;
+      }
+      
+   personagem.style.top = personagemY+"px";  
+       
+     break;  
+    
+      
+    case 'ArrowLeft':
+      personagemImg.classList.add("movimento","paraesquerda");
+      personagemImg.classList.remove("parabaixo");
+      personagemImg.classList.remove("paradireita");
+      personagemImg.classList.remove("paracima");
+
+      personagemX -= velocidade;
+      
+      if(personagemX <= 0){
+      personagemX = 0;
+    }
+
+        
+    personagem.style.left = personagemX+"px";  
+       
+     break;  
+    
+      
+    case 'ArrowRight':
+    personagemImg.classList.add("movimento","paradireita");
+    personagemImg.classList.remove("parabaixo");
+    personagemImg.classList.remove("paracima");
+    personagemImg.classList.remove("paraesquerda");
+    
+    personagemX += velocidade;
+    
+    if(personagemX >= largura_Container - tamanho_Personagem){
+      
+      personagemX = largura_Container - tamanho_Personagem;
+    }
+        
+    personagem.style.left = personagemX+"px";  
+       
+     break;  
+    
+    
+  }
+  
+  
+  
+  if(porta1 ==  "on"){
+    
+  
+   if(personagemY <= 0  &&  personagemX >=  700){
+      
+  
+      let modal1 = document.querySelector('.modal1')
+  
+      modal1.style.display = 'block';
+      
+      
+      }
+  
+  }
+      
+   if(porta2 == "on"){
+   
+   if(personagemX >=  largura_Container - tamanho_Personagem &&  personagemY >= altura_Container  - tamanho_Personagem){
+      
+      
+      
+     let modal2 = document.querySelector('.modal2')
+  
+      modal2.style.display = 'block';
+      
+     
+   }
+     
+      
+    }
+    
+    if(porta3 == "on"){
+  
+  if(personagemX <= 0 && personagemY >= altura_Container - tamanho_Personagem){
+            
+     let modal3 = document.querySelector('.modal3')
+  
+      modal3.style.display = 'block';
+          
+    }
+         
+    }
+    
+      if(porta4 == "on"){
+        
+      
+      if(personagemX ==  320 && personagemY == 140){
+      
+          window.location.reload();
+      
+    }
+      
+    }    
+    
+} 
+   
+    
+
+function portal_2(){
+  
+  chave2.style.display="block";
+  chaves.innerHTML =  "Chaves 2/3";
+  portal1.style.visibility="hidden";
+  portal2.style.display="block";
+  
+  
+}
+
+
+function portal_3(){
+  
+   portal1.style.visibility="hidden";
+   portal2.style.visibility="hidden";
+   portal3.style.display="block";
+   chave2.style.display="block";
+   chave3.style.display="block";
+   chaves.innerHTML = "Chaves 3/3";
+
+  
+}
+
+
+
+function confirmar() {
+  
+  
+  let q1 = document.querySelector(".q1");
+    
+  let q2 = document.querySelector(".q2");
+    
+  let q3 = document.querySelector(".q3");
+    
+  let q4 = document.querySelector(".q4");
+    
+  let q5 = document.querySelector(".q5");
+    
+  let q6 = document.querySelector(".q6");
+    
+  let q7 = document.querySelector(".q7");
+    
+  let q8 = document.querySelector(".q8");
+       
+    if(q1.checked == true){
+        
+        
+      document.querySelector(".v").style.color="green";
+        
+        
+    }
+    
+    else if(q2.checked == true){
+        
+     document.querySelector(".f").style.color="red";    
+    document.querySelector(".v").style.color="green";
+    }
+    
+    else if(q3.checked == true){
+        
+       document.querySelector(".f2").style.color="red";
+       document.querySelector(".v").style.color="green";
+        
+    }
+   
+    
+     if(q4.checked == true){
+        
+        
+        document.querySelector(".f3").style.color="red";
+        document.querySelector(".v").style.color="green";
+    }
+    
+    else if(q5.checked == true){
+        
+        
+        document.querySelector(".f4").style.color="red";
+        document.querySelector(".v2").style.color="green";
+    }
+    
+    else if(q6.checked == true){
+        
+       
+        
+        document.querySelector(".f5").style.color="red";
+        document.querySelector(".v2").style.color="green";
+    }
+   
+    
+     if(q7.checked == true){
+        
+        
+        document.querySelector(".v2").style.color="green";
+     }
+    
+    else if(q8.checked == true){
+        
+        document.querySelector(".v2").style.color="green";
+        document.querySelector(".f6").style.color="red";
+    }
+    
+    
+  document.querySelector(".confirmar").style.display = "none";
+  document.querySelector(".continuar").style.display =  "block";
+  document.querySelector(".adc_chave").style.display = "block";
+}
+
+function continuar(){
+  
+    document.querySelector('.modal1').style.visibility = "hidden";
+    document.querySelector('.portal1').style.visibility = "hidden";
+    document.querySelector('.portal2').style.display = "block";
+    chave2.style.display = "block";
+    chaves.innerHTML = "Chaves 2/3";
+    porta1 = "off";
+    porta2 = "on";
+    porta3 = "off";
+    
+}
+
+
+function confirmar2(){
+  
+  
+   let q9 = document.querySelector(".q9");
+    
+   let q10 = document.querySelector(".q10");
+    
+   let q11 = document.querySelector(".q11");
+    
+   let q12 = document.querySelector(".q12");
+    
+   let q13 = document.querySelector(".q13");
+    
+   let q14 = document.querySelector(".q14");
+    
+   let q15 = document.querySelector(".q15");
+    
+   
+    
+    
+    if(q9.checked == true){
+       
+        document.querySelector(".v3").style.color="green";
+    }
+    
+    else if(q10.checked == true){
+        
+       document.querySelector(".f7").style.color="red";
+       document.querySelector(".v3").style.color="green";
+        
+    }
+    
+    if(q11.checked == true){
+        
+        document.querySelector(".f8").style.color="red";
+       document.querySelector(".v4").style.color="green";
+        
+        
+    }
+    
+    else if(q12.checked == true){
+        
+        document.querySelector(".f9").style.color="red";
+       document.querySelector(".v4").style.color="green";
+        
+        
+    }
+    
+   else if(q13.checked == true){
+        
+        document.querySelector(".f10").style.color="red";
+       document.querySelector(".v4").style.color="green";
+        
+        
+    }
+
+    else if(q14.checked == true){
+        
+      
+       document.querySelector(".v4").style.color="green";
+        
+        
+    }
+    
+        else if(q15.checked == true){
+        
+        document.querySelector(".f11").style.color="red";
+       document.querySelector(".v4").style.color="green";
+        
+        
+        
+    }
+    document.querySelector(".adc_chave2").style.display = "block";
+    document.querySelector(".confirmar2").style.visibility = "hidden";
+    document.querySelector(".continuar2").style.display = "block";
+  
+  
+
+
+  
+}
+
+ function confirmar3(){
+   
+   
+   let q16 = document.querySelector(".q16");
+    
+   let q17 = document.querySelector(".q17");
+    
+   let q18 = document.querySelector(".q18");
+    
+   let q19 = document.querySelector(".q19");
+    
+   let q20 = document.querySelector(".q20");
+    
+   let q21 = document.querySelector(".q21");
+    
+   let q22 = document.querySelector(".q22");
+    
+   
+    
+    
+    if(q16.checked == true){
+       
+        document.querySelector(".f12").style.color="red";
+        document.querySelector(".v5").style.color="green";
+    }
+    
+    else if(q17.checked == true){
+        
+       document.querySelector(".f13").style.color="red";
+       document.querySelector(".v5").style.color="green";
+        
+    }
+    
+    if(q18.checked == true){
+        
+        
+       document.querySelector(".v5").style.color="green";
+        
+        
+    }
+    
+    else if(q19.checked == true){
+        
+        document.querySelector(".f14").style.color="red";
+       document.querySelector(".v6").style.color="green";
+        
+        
+    }
+    
+   else if(q20.checked == true){
+        
+        
+       document.querySelector(".v6").style.color="green";
+        
+        
+    }
+
+    else if(q21.checked == true){
+        
+      document.querySelector(".f15").style.color="red";
+       document.querySelector(".v6").style.color="green";
+        
+        
+    }
+        document.querySelector(".confirmar3").style.visibility = "hidden";
+        document.querySelector(".continuar3").style.display = "block";
+          
+}
+
+
+function continuar2(){
+  
+  let modal2 = document.querySelector('.modal2');
+  modal2.style.visibility="hidden";
+  document.querySelector(".portal2").style.visibility = "hidden";
+  document.querySelector(".portal3").style.display = "block";
+  chave3.style.display = "block";
+  chaves.innerHTML = "Chaves 3/3";
+  porta1 = "off";
+  porta2 =  "off";
+  porta3 = "on";
+
+
+  
+}
+
+function continuar3(){
+  
+     
+  let modal3 = document.querySelector('.modal3')
+  modal3.style.visibility="hidden";
+  portal3.style.visibility="hidden";
+  document.querySelector(".portal4").style.display = "block";
+  
+  porta1 =  "off";
+  porta2 =  "off";
+  porta3 = "off";
+  porta4 = "on";
+}
+
+
+
+
+      
+    </script>
+
+
+
+
+    </body> 
+       
+    
+</html>
